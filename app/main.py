@@ -2,7 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 from tortoise import Tortoise
 
-from api.endpoints import load_tariffs, tariffs
+from api.endpoints import load_tariffs, tariffs, calculate_insurance_cost
 from db.db import init
 
 app = FastAPI()
@@ -10,6 +10,7 @@ app = FastAPI()
 # Include your API endpoints here
 app.include_router(load_tariffs.router)
 app.include_router(tariffs.router)
+app.include_router(calculate_insurance_cost.router)
 
 
 @app.on_event("startup")
