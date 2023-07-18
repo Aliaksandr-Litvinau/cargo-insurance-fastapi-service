@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from db.db import fill_tariffs_in_db
+from app.db.db import fill_tariffs_in_db
 
 router = APIRouter()
 

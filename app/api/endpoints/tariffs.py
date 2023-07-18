@@ -1,6 +1,7 @@
 # endpoint for obtaining data on all tariffs
-from api.models.tariff import Tariff
 from fastapi import APIRouter
+
+from app.api.models.tariff import Tariff
 
 router = APIRouter()
 

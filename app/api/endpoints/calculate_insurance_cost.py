@@ -3,14 +3,14 @@ import datetime
 
 from fastapi import HTTPException, APIRouter
 
-from api.models.insurance_request import InsuranceRequest
-from api.models.tariff import Tariff
+from app.api.models.insurance_request import InsuranceRequest
+from app.api.models.tariff import Tariff
 
 router = APIRouter()
 
 
 @router.post("/calculate_insurance/")
-async def фвв(request: InsuranceRequest):
+async def calculate_insurance(request: InsuranceRequest):
     # Parse the date from the request to a format compatible with the database
     date = datetime.datetime.strptime(request.date, "%Y-%m-%d")
 

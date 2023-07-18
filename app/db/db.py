@@ -1,4 +1,5 @@
 import datetime
+import os
 
 from tortoise import Tortoise
 
@@ -9,7 +10,7 @@ from core.config import TARIFFS_JSON_FILE
 # Initialization and connection to the database
 async def init():
     await Tortoise.init(
-        db_url="sqlite://db.sqlite3",  # Path to the SQLite database
+        db_url=os.environ.get("DB_URL"),
         modules={"models": ["api.models.tariff"]}  # Specify the correct module path
     )
     await Tortoise.generate_schemas()
