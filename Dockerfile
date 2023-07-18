@@ -15,6 +15,9 @@ RUN pipenv install --system --deploy
 # Copy the entire project directory into the container's working directory
 COPY /app .
 
+# Set PYTHONPATH to include the app directory
+ENV PYTHONPATH=/app
+
 # Expose port 8000 to the host
 EXPOSE 8000
 
