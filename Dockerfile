@@ -15,6 +15,9 @@ RUN pipenv install --system --deploy
 # Copy the entire project directory into the container's working directory
 COPY /app .
 
+# Copy the entire project directory into the container's working directory
+COPY main.py /app/
+
 # Set PYTHONPATH to include the app directory
 ENV PYTHONPATH=/app
 
