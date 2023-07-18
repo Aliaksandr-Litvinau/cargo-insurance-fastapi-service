@@ -34,3 +34,8 @@ The service will now be running on http://0.0.0.0:8000.
 The service exposes the following API endpoints:
 - POST /calculate_insurance/: Calculate the insurance cost for a given cargo type, date, and declared value.
 - Please refer to the API documentation at http://0.0.0.0:8000/docs for detailed information on the available endpoints and their usage.
+
+### Running with docker compose:
+``` bash
+docker compose up --build
+```
